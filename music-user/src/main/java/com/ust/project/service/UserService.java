@@ -30,11 +30,21 @@ public class UserService {
 		return musicRepository.findByMusicName(musicName);
 	}
 
+	public List<Music> fetchMusicByMusicGenre(String musicGenre) {
+
+		return musicRepository.findAllByMusicGenre((musicGenre));
+	}
+
+	public List<Music> fetchMusicBySongLanguage(String songLanguage) {
+
+		return musicRepository.findAllBySongLanguage((songLanguage));
+	}
+
+
 	public List<Music> fetchMusicByArtistName(String artistName) {
 
 		return musicRepository.findAllByArtistName(artistName);
 	}
-	
 
 	public boolean addMusicRating(RatingDto ratingDto, Long musicId,Long userId) {
 	    Optional<Music> op = musicRepository.findById(musicId);

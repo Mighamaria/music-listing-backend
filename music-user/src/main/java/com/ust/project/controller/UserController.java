@@ -45,7 +45,19 @@ public class UserController {
 		
 	}
 
-	@GetMapping("search/music/artistName/{artistName}")
+	@GetMapping("search/music/musicGenre/{musicGenre}")
+	public ResponseEntity<List<Music>> getMusicByMusicGenre(@PathVariable String musicGenre)
+	{
+		return ResponseEntity.ok().body(userService.fetchMusicByMusicGenre(musicGenre));
+	}
+
+
+	@GetMapping("search/music/songLanguage/{songLanguage}")
+	public ResponseEntity<List<Music>> getMusicBySongLanguage(@PathVariable String songLanguage)
+	{
+		return ResponseEntity.ok().body(userService.fetchMusicBySongLanguage(songLanguage));
+	}
+
 	public ResponseEntity<List<Music>> getMusicByArtistName(@PathVariable String artistName)
 	{
 		return ResponseEntity.ok().body(userService.fetchMusicByArtistName(artistName));

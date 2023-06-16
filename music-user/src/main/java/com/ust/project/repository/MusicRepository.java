@@ -13,5 +13,7 @@ public interface MusicRepository extends JpaRepository<Music, Long> {
 	Music findByMusicName(String musicName);
 
 	List<Music> findAllByArtistName(String artistName);
+	List<Music> findAllByMusicGenre(String MusicGenre);
+	List<Music> findAllBySongLanguage(String songLanguage );
 
 }
